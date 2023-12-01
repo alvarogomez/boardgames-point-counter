@@ -1,0 +1,39 @@
+@import '../../Common.module.scss';
+
+.addPlayerFormContainer {
+  width: 100%;
+  padding: var(--smallSpacing);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.playerNameInput {
+  display: block;
+  width: 100%;
+}
+
+.playerNameInput label {
+  margin-bottom: var(--smallSpacing);
+  font-size: 1.3rem;
+  display: block;
+  width: 100%;
+}
+
+.textInput,
+.selectInput {
+  display: block;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: var(--largeSpacing);
+  padding-left: var(--smallSpacing);
+  margin-bottom: var(--smallSpacing);
+}
+
+.selectInput {
+  padding: var(--smallSpacing);
+}
+
+button.addPlayerForm {
+  margin-top: var(--mediumSpacing);
+}

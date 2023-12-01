@@ -1,0 +1,78 @@
+.PlayerDisplayContainer {
+  padding: var(--smallSpacing) var(--smallSpacing);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.elementsWrapper {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 150px;
+  grid-gap: var(--mediumSpacing);
+}
+
+.editMode {
+  grid-template-columns: 1fr 79px;
+
+}
+
+.nickName {
+  display: flex;
+  border-radius: var(--radius);
+  width: 100%;
+  align-items: center;
+  background-color: var(--backgroundAppColor);
+  font-size: 2rem;
+  padding: var(--smallSpacing);
+  color: var(--playerBlack);
+  box-shadow: var(--shadow);
+}
+
+.deleteIcon {
+  text-align: right;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.counter {
+  display: grid;
+  box-shadow: var(--shadow);
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.currentPoints {
+  font-size: 2rem;
+  padding: var(--smallSpacing);
+  background-color: var(--playerBlack);
+  color: white;
+  font-size: 1.5rem;
+}
+
+.currentPoints,
+.minus,
+.plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.minus {
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.plus {
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.minus,
+.plus {
+  background-color: var(--primaryColor);
+  color: white;
+}
+
+.minus:hover,
+.plus:hover {
+  background-color: var(--primaryColorComplementary);
+}

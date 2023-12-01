@@ -1,0 +1,41 @@
+$medium-breakpoint: 756px;
+
+.button {
+  padding: var(--smallSpacing);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-weight: 600;
+  width: 100%;
+}
+
+.primaryButton {
+  background-color: var(--primaryColor);
+  color: white;
+
+  &:hover {
+    background-color: var(--primaryColorComplementary);
+    color: white;
+  }
+}
+
+.secondaryButton {
+  background-color: var(--secondaryColor);
+  color: white;
+
+  &:hover {
+    background-color: var(--secondaryColorComplementary);
+    color: white;
+  }
+}
+
+
+.smallButton {
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+  padding: var(--tinySpacing);
+
+  @media screen and (min-width: $medium-breakpoint) {
+    max-width: 220px;
+    padding: var(--smallSpacing);
+  }
+}

@@ -11,3 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+html {
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--backgroundAppColor);
+}
+
+button {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  border: none;
+}
