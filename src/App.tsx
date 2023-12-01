@@ -71,7 +71,7 @@ function App() {
                 Add new player
               </button>
             )}
-            {currentView === 'EDIT' && (
+            {currentView === 'EDIT' && players.length > 0 && (
               <button
                 data-testid="start-game-button"
                 className={classNames(styles.secondaryButton, styles.button, styles.smallButton)}

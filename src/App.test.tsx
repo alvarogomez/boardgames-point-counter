@@ -2,6 +2,12 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 
 describe('APP general operations', () => {
+  it('game cannot be started without players', async () => {
+    render(<App />);
+    const startButton: HTMLButtonElement = screen.getByTestId('start-game-button');
+    expect(startButton).not.toBeInTheDocument();
+  });
+
   it('should add a new player to the list after completing the form', async () => {
     render(<App />);
     const addButton: HTMLButtonElement = screen.getByTestId('add-player-button');
