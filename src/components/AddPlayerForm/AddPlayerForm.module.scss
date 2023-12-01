@@ -1,4 +1,5 @@
-@import '../../Common.module.scss';
+@import '../../Buttons.module.scss';
+@import '../../Breakpoints.module.scss';
 
 .addPlayerFormContainer {
   width: 100%;
@@ -7,20 +8,21 @@
   font-weight: 600;
 }
 
-.playerNameInput {
+.formElement {
   display: block;
-  width: 100%;
+  margin: 0 var(--smallSpacingNeg) var(--smallSpacing) var(--smallSpacingNeg);
+  padding: 0 var(--smallSpacing);
+  border-bottom: 2px dashed var(--outlineAppColor);
 }
 
-.playerNameInput label {
+.formLabel {
   margin-bottom: var(--smallSpacing);
   font-size: 1.3rem;
   display: block;
   width: 100%;
 }
 
-.textInput,
-.selectInput {
+.inputElement {
   display: block;
   width: 100%;
   font-size: 1.2rem;
@@ -31,6 +33,7 @@
 }
 
 .selectInput {
+  background-color: var(--backgroundColorLight);
   padding: var(--smallSpacing);
 }
 

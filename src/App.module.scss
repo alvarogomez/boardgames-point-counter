@@ -1,22 +1,35 @@
-@import './Common.module.scss';
+@import './Breakpoints.module.scss';
+@import './Buttons.module.scss';
 
 :root {
-  //variables used for color, spacings or common values like the border-radius
+  //spacings
   --smallSpacing: 1rem;
   --tinySpacing: 0.5rem;
   --mediumSpacing: 2rem;
   --largeSpacing: 3rem;
+  --smallSpacingNeg: -1rem;
+  --tinySpacingNeg: -0.5rem;
+  --mediumSpacingNeg: -2rem;
+  --largeSpacingNeg: -3rem;
   --headerHeight: 75px;
+  //radius and shadow
   --radius: 0.5rem;
   --shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   --desktopAppMaximumWidth: 1024px;
-  --backgroundColorHeader: rgb(103, 142, 139);
+  //layout background colors
+  --backgroundColorMedium: rgb(103, 142, 139);
+  --backgroundColorLight: #eaf2ef;
   --backgroundAppColor: whitesmoke;
   --backgroundAppColorTinted: #cedbd8;
-  --primaryColor: rgb(13, 70, 70);
-  --primaryColorComplementary: #628284;
+  //main app decorations
+  --borderAppColor: rgb(103, 142, 139);
+  --outlineAppColor: rgb(81, 123, 120);
+  //primary and Secondary colors
+  --primaryColor: rgb(51, 77, 77);
+  --primaryColorComplementary: #486466;
   --secondaryColor: rgb(70, 26, 26);
-  --secondaryColorComplementary: #628284;
+  --secondaryColorComplementary: #791d1d;
+  //playerColors
   --playerBlack: #151414;
   --playerBlueLight: #12126c9f;
   --playerRedLight: #6f07079f;
@@ -42,17 +55,13 @@
   grid-gap: var(--smallSpacing);
   padding: var(--smallSpacing);
   justify-content: space-between;
-  background-color: var(--backgroundColorHeader);
+  background-color: var(--backgroundColorMedium);
   color: white;
 
-  @media screen and (min-width: $medium-breakpoint) {
+  @media screen and (min-width: $tablet-breakpoint) {
     display: flex;
     justify-content: space-between;
   }
-}
-
-.headerTitle {
-  font-size: 1.4rem;
 }
 
 .appWrapper {
@@ -63,4 +72,6 @@
   background-color: var(--backgroundAppColorTinted);
   min-height: 100vh;
   min-height: 100svh;
+  border: var(--tinySpacing) solid var(--borderAppColor);
+  outline: var(--tinySpacing) solid var(--outlineAppColor);
 }

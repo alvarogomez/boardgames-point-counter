@@ -1,4 +1,4 @@
-$medium-breakpoint: 756px;
+@import './Breakpoints.module.scss';
 
 .button {
   padding: var(--smallSpacing);
@@ -34,7 +34,7 @@ $medium-breakpoint: 756px;
   box-shadow: var(--shadow);
   padding: var(--tinySpacing);
 
-  @media screen and (min-width: $medium-breakpoint) {
+  @media screen and (min-width: $tablet-breakpoint) {
     max-width: 220px;
     padding: var(--smallSpacing);
   }

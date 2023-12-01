@@ -16,35 +16,37 @@ export const PlayerDisplay: React.FC<PlayerDisplayProps> = ({
   currentView,
   deletePlayer,
 }) => {
-  const { nickName, playerColor } = player;
   const [points, setPoints] = useState(0);
+  const { nickName } = player;
+  const playerColor = player.playerColor;
+
   const removePlayer = () => {
     deletePlayer(player);
   };
   return (
     <div
-      style={{ backgroundColor: `var(--player${playerColor}Light)` }}
+      data-testId={`player-${playerColor}-display`}
       className={styles.PlayerDisplayContainer}
-      data-testId={`player-${player.playerColor.toLowerCase()}-display`}>
+      style={{ backgroundColor: `var(--player${playerColor}Light)` }}>
       <div
         className={classNames(styles.elementsWrapper, currentView === 'EDIT' && styles.editMode)}>
         <span className={styles.nickName}>{nickName}</span>
         {currentView === 'GAME' && (
-          <div className={styles.counter}>
+          <div className={classNames(styles.counter, styles.counterElement)}>
             <button
-              data-testid={`minus-${player.playerColor.toLowerCase()}`}
+              data-testid={`minus-${playerColor}`}
               className={styles.minus}
               onClick={() => setPoints(points - 1)}>
               -
             </button>
             <span
-              data-testid={`points-${player.playerColor.toLowerCase()}`}
-              className={styles.currentPoints}>
+              data-testid={`points-${playerColor}`}
+              className={classNames(styles.currentPoints, styles.counterElement)}>
               {points}
             </span>
             <button
-              data-testid={`plus-${player.playerColor.toLowerCase()}`}
-              className={styles.plus}
+              data-testid={`plus-${playerColor}`}
+              className={classNames(styles.plus, styles.counterElement)}
               onClick={() => setPoints(points + 1)}>
               +
             </button>

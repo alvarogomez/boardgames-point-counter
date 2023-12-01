@@ -19,9 +19,15 @@ export const AddPlayerForm: React.FC<AddPlayerFormProps> = ({
   const [playerColor, setPlayerColor] = useState('');
 
   const inputRef = useRef<HTMLInputElement>(null);
+  const unavailableColors = getUnavailableColors();
+
   useEffect(() => {
     if (nickName === '') focusOnInput();
   }, [nickName]);
+
+  const focusOnInput = () => {
+    inputRef?.current?.focus();
+  };
 
   const saveForm = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     updatePlayerList({
@@ -38,42 +44,40 @@ export const AddPlayerForm: React.FC<AddPlayerFormProps> = ({
     setPlayerColor(event.currentTarget.value);
   };
 
-  const focusOnInput = () => {
-    inputRef?.current?.focus();
-  };
-
-  const unavailableColors = getUnavailableColors();
   return (
     <div className={styles.addPlayerFormContainer}>
-      <div className={styles.playerNameInput}>
+      <div className={styles.formElement}>
         <label className={styles.formLabel}>Please type the nickname:</label>
         <input
           data-testid="name-input"
+          className={classNames(styles.textInput, styles.inputElement)}
           ref={inputRef}
-          className={styles.textInput}
           type="text"
           value={nickName}
           onChange={handleNicknameChange}
         />
-        {nickName && (
+      </div>
+
+      {nickName && (
+        <div className={styles.formElement}>
           <select
-            className={styles.selectInput}
             data-testid="color-selector"
+            className={classNames(styles.selectInput, styles.inputElement)}
             name="playerColor"
             onChange={handleColorChange}>
-            <option>...Please select a color</option>
+            <option>...Please select a color...</option>
             {listOfColors
               .filter((val) => !unavailableColors.includes(val))
               .map((color) => (
                 <option key={color}>{color}</option>
               ))}
           </select>
-        )}
-      </div>
+        </div>
+      )}
       {nickName && playerColor && (
         <button
-          className={classNames(styles.primaryButton, styles.button)}
           data-testid="create-player-btn"
+          className={classNames(styles.primaryButton, styles.button)}
           onClick={saveForm}>
           Add new player
         </button>
