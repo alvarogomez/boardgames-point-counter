@@ -32,10 +32,10 @@ export const PlayerDisplay: React.FC<PlayerDisplayProps> = ({
         className={classNames(styles.elementsWrapper, currentView === 'EDIT' && styles.editMode)}>
         <span className={styles.nickName}>{nickName}</span>
         {currentView === 'GAME' && (
-          <div className={classNames(styles.counter, styles.counterElement)}>
+          <div className={classNames(styles.counter)}>
             <button
               data-testid={`minus-${playerColor}`}
-              className={styles.minus}
+              className={classNames(styles.minus, styles.counterElement)}
               onClick={() => setPoints(points - 1)}>
               -
             </button>

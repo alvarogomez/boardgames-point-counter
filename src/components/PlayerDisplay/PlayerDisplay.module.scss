@@ -8,7 +8,7 @@
 .elementsWrapper {
   display: grid;
   width: 100%;
-  grid-template-columns: 1fr 150px;
+  grid-template-columns: 1fr minmax(110px, 130px);
   grid-gap: var(--mediumSpacing);
 }
 
@@ -23,7 +23,7 @@
   width: 100%;
   align-items: center;
   background-color: var(--backgroundAppColor);
-  font-size: 2rem;
+  font-size: 1.6rem;
   padding: var(--smallSpacing);
   color: var(--playerBlack);
   box-shadow: var(--shadow);
